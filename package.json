@@ -1,5 +1,9 @@
-{"scripts": {
-      "start": "node server.js"
-    }
+{
+      "scripts": {
+            "start": "node server.js"
+      },
+      "dependencies": {
+            "express": "^4.17.1",
+            "node": "^17.1.0"
+      }
 }
-  
