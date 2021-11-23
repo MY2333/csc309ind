@@ -1,5 +1,13 @@
 function sticky() {
     this.note;
+    this.background = "black"
+    this.color = "white"
+    this.height = 300
+    this.width = 200
+    this.fontSize = 15
+    this.x = 0
+    this.y = 0
+    this.title = 'Sticky Note'
     this.italic = () => {
         // const text = document.getElementById("textArea").innerHTML
         // const selected = window.getSelection();
@@ -30,19 +38,50 @@ function sticky() {
         cur.parentElement.firstChild.style.display = 'block'
     }
 }
+
+function changeColorDom(n, color){
+    n.note.style.backgroundColor = color;
+}
+
+function changeTitleDom(n, title){
+    n.note.children[0].children[1].innerHTML=title
+}
+function changePositionDom(n, x, y){
+    n.note.style.top = x + "px";
+    n.note.style.left = y + "px";
+}
+function changeSizeDom(n, h, w){
+    n.note.children[0].style.width = w +"px"
+    n.note.children[0].style.height = h +"px"
+    n.note.children[0].children[5].style.width = w - 5 + "px"
+    n.note.children[0].children[5].style.height = h - 100 + "px"
+}
+function changeFontSizeDom(n, size){
+    n.note.style.fontSize = size + "px"
+}
+function changeFontColorDom(n, color){
+    n.note.style.color = color
+}
+
 sticky.prototype = {
 	create: function() {
         const n = document.createElement('div')
-        n.style = 'background-color: black; position:fixed; top:0; left:0; color:white'
+        n.style.backgroundColor = this.background
+        n.style.position = "fixed"
+        n.style.top = this.x
+        n.style.left=this.y
+        n.style.color=this.color
 		const note = document.createElement('div')
-		note.style = 'width: 200px; height: 300px; padding: 10px; '
+        note.style.width = this.width
+        note.style.height = this.height
+        note.style.padding = '10px'
         const b3 = document.createElement('button')
         b3.style = "width:30px; height: 20px; float:right"
         b3.innerHTML = "-"
         b3.onclick = this.zoom
         note.append(b3)
         const title = document.createElement('p')
-        title.innerHTML = 'Sticky Note'
+        title.innerHTML = this.title
         note.append(title)
 		const b1 = document.createElement('button')
         b1.innerHTML = "<u>U</u>"
@@ -75,26 +114,30 @@ sticky.prototype = {
 	},
 
 	changeColor: function(color) {
-		this.note.style.backgroundColor = color;
+		this.background = color
+        changeColorDom(this, color)
 	},
 
     changeTitle: function(title){
-        this.note.children[0].children[1].innerHTML=title
+        this.title = title
+        changeTitleDom(this, title)
     },
     changePosition: function(x, y){
-        this.note.style.top = x + "px";
-        this.note.style.left = y + "px";
+        this.x = x;
+        this.y = y;
+        changePositionDom(this, x, y)
     },
     changeSize: function(h, w){
-        this.note.children[0].style.width = w +"px"
-        this.note.children[0].style.height = h +"px"
-        this.note.children[0].children[5].style.width = w - 5 + "px"
-        this.note.children[0].children[5].style.height = h - 100 + "px"
+        this.height = h
+        this.width = w
+        changeSizeDom(this, h, w)
     },
     changeFontSize: function(size){
-        this.note.style.fontSize = size + "px"
+        this.size = size
+        changeFontSizeDom(this, size)
     },
     changeFontColor: function(color){
-        this.note.style.color = color
+        this.color = color
+        changeFontColorDom(this, color)
     }
 }
