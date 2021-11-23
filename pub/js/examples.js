@@ -1,0 +1,15 @@
+const sn1 = new sticky()
+sn1.create()
+sn1.changeColor("green")
+sn1.changeTitle("Question 1: Introduce yourself")
+sn1.changePosition(10, 10)
+sn1.changeSize(200, 200)
+sn1.changeFontColor("white")
+
+const sn2 = new sticky()
+sn2.create()
+sn2.changePosition(300, 300)
+
+const sn3 = new sticky()
+sn3.create()
+sn3.changePosition(300, 600)
