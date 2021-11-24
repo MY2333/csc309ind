@@ -100,7 +100,7 @@ stickyNote.prototype = {
         note.append(b4)
         const texta = document.createElement('div')
         texta.setAttribute("contenteditable", true);
-        texta.style = 'width: 190px; height:180px; border-style: solid'
+        texta.style = 'width: 190px; height:180px; border-style: solid; overflow-y: scroll;'
         note.append(texta)
         n.append(note)
         const show = document.createElement('button')
