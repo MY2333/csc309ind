@@ -1,4 +1,4 @@
-const sn1 = new sticky()
+const sn1 = new stickyNote()
 sn1.create()
 sn1.changeColor("green")
 sn1.changeTitle("Question 1: Introduce yourself")
@@ -6,10 +6,10 @@ sn1.changePosition(300, 300)
 sn1.changeSize(400, 300)
 sn1.changeFontSize(20)
 
-const sn2 = new sticky()
+const sn2 = new stickyNote()
 sn2.create()
 
-const sn3 = new sticky()
+const sn3 = new stickyNote()
 sn3.create()
 sn3.changePosition(300, 700)
 sn3.changeColor("lightBlue")

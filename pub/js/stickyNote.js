@@ -1,4 +1,4 @@
-function sticky() {
+function stickyNote() {
     this.note;
     this.background = "black"
     this.color = "white"
