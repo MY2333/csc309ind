@@ -63,7 +63,7 @@ function changeFontColorDom(n, color){
     n.note.style.color = color
 }
 
-sticky.prototype = {
+stickyNote.prototype = {
 	create: function() {
         const n = document.createElement('div')
         n.style.backgroundColor = this.background
