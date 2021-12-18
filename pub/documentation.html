@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Sticky note documentations</title>
+ </head>
+ <body>
+    <h1>STICKY NOTES DOCUMENTATIONS</h1>
+    <h2>Getting Started</h2>
+    <ul>
+       <li>This library is depending on jQuery. So the following scripts are necessary for it.</li>
+       <xmp>
+        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script defer type="text/javascript" src='js/stickyNote.js'></script>
+       </xmp>
+       <li>Create. There are three arguments needed. The first one is the id of the sticky note, 
+           the second and third ones are the width and height. The last one may have three
+           different string: '', 'bullets', and 'numbers' to decide the type of sticky note.</li>
+       <xmp>
+           const sn = new stickyNote()
+           sn.create('id', 200, 300, 'bullets')
+       </xmp>
+    </ul>
+    <h2>APIs</h2>
+       <ul>
+           <li>Change color. It need a color string as the argument. 
+               It will change the background color of the sticky note</li>
+           <xmp>
+               sn.changeColor("green")
+           </xmp>
+           <li>Change title. It need a title string as the argument.
+               The default value of the sticky title is 'Sticky Note'. 
+               By calling this methid, the title can be changed to other text.
+           </li>
+           <xmp>
+                sn.changeTitle("Write down what you think")
+           </xmp>
+           <li>
+               Change position. It need a x position and a y position. The sticky 
+               note's top left corner will move to the new position.
+           </li>
+           <xmp>
+                sn.changePosition(450, 450)
+           </xmp>
+           <li>
+               Change size. It need two arguments, height and width. The sticky 
+               note would change its height and width to the new values.
+           </li>
+           <xmp>
+               sn1.changeSize(400, 300)
+           </xmp>
+           <li>
+               Change font size. It need a integer as the new font size. The words
+               in the sticky note, including title and users' input, would have the new 
+               font size value.
+           </li>
+           <xmp>
+               sn1.changeFontSize(20)
+           </xmp>
+           <li>Change font color. It need a color string as the argument. It would change
+               the fonts in the sticky note to have use the new color. 
+           </li>
+           <xmp>
+               sn3.changeFontColor("black")
+           </xmp>
+       </ul>
+    
+ </body>
+</html>

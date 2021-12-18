@@ -6,10 +6,55 @@
     
     <title>yaoxiny3 library</title>
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Then we load a script that depends on jQuery -->
-    <script defer type="text/javascript" src='js/stickyNote.js'></script>
-    <!-- Then we load a script that depends on our libraries (and jQuery) -->
-    <script defer type="text/javascript" src='js/examples.js'></script>
 
+    <script defer type="text/javascript" src='js/stickyNote.js'></script>
+
+    <script defer type="text/javascript" src='js/examples.js'></script>
+    <link rel="stylesheet" href="example.css">
+    <link rel="Documentations" href="documentation.html">
  </head>
+ <body>
+    <h1>STICKY NOTES!!</h1>
+    <p>This allows developers to generate a sticky note on their page</p>
+    <ul>
+       <li>By clicking '-' button, the sticky note would disappear and left only '+' button. By clicking '+', the sticky note would come back</li>
+       <li>'U' is for underline, 'I' is for italic, and 'B' is for bold</li>
+       <li>By draging the sticky note's title, user can move sticky note around.</li>
+    </ul>
+    <a href="documentation.html">Documentations</a>
+    <h2>Examples</h2>
+    <ol class="example">
+       <li><strong>The normal sticky note</strong>
+         <xmp>
+         const sn2 = new stickyNote()
+         sn2.create('two', 200, 300, '')
+         sn2.changePosition(450, 50)
+         </xmp>
+      </li>
+       <li><strong>The sticky notes with other properties and in bullet point form:</strong>
+         <br>This can be used for student to answer a question
+         <xmp>
+            const sn1 = new stickyNote()
+            sn1.create('one', 200, 300, 'bullets')
+            sn1.changeColor("green")
+            sn1.changeTitle("Question 1: Introduce yourself")
+            sn1.changePosition(450, 450)
+            sn1.changeSize(400, 300)
+            sn1.changeFontSize(20)
+         </xmp>
+      </li>
+       <li><strong>Another Sticky note for numbering form:</strong>
+         <br>This can be used to write down comments
+         <xmp>
+            const sn3 = new stickyNote()
+            sn3.create('three', 200, 300, 'numbers')
+            sn3.changePosition(450, 950)
+            sn3.changeColor("lightBlue")
+            sn3.changeFontColor("black")
+            sn3.changeTitle("Write down what you think")
+         </xmp>
+      </li>
+    </ol>
+      
+ </body>
 </html>
